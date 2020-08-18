@@ -1,0 +1,21 @@
+.Search {
+    display: flex;
+    align-items: center;
+}
+#searchInput {
+  width: auto;
+  font-size: 16px;
+  border: none;
+  height: 33px;
+}
+
+#searchButton {
+  color: rgb(0, 0, 0) !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #60a3bc;;
+  padding: 9px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+}

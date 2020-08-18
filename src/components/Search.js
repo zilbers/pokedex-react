@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./css/search.css"
 
 export default function Search(props) {
   const [searchQuery, setSearchQuery] = useState(25);
@@ -13,7 +14,6 @@ export default function Search(props) {
         id="searchButton"
         onClick={() => {
           props.searchPokemon(searchQuery);
-          setSearchQuery("");
         }}
       >
         Search
