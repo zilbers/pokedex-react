@@ -1,11 +1,11 @@
 import React from "react";
-import "./css/header.css"
+import "./css/header.css";
 
 function Header() {
   return (
     <header id="header">
       <h1 id="pokeHead" className="pokeHead">
-        Pok'edex!
+        POKÉDEX
       </h1>
     </header>
   );

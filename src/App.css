@@ -1,4 +1,15 @@
+html {
+  background-image: linear-gradient(
+    rgba(245, 241, 252, 0.5),
+    rgba(140, 108, 255, 0.5),
+    rgba(147, 139, 253, 0.5)
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
 body {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }

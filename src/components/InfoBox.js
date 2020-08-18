@@ -1,17 +1,19 @@
 import React from "react";
-import Type from "./Type";
+import Abilities from "./Abilities";
 
 export default function InfoBox(props) {
   const pokemonData = props.pokemonData;
   return (
     <div id="infoBox">
-      <span id="pokeHeight">
+      <span id="pokeHeight" className="infoContainer">
         Height: <span className="personalInfo">{pokemonData.height}</span>
       </span>
-      <span id="pokeWeight">
+      <span id="pokeWeight" className="infoContainer">
         Weight: <span className="personalInfo">{pokemonData.weight}</span>
       </span>
-      <Type pokemonData={pokemonData} />
+      <span id="abilitiesContainer">
+        Abilities: <Abilities pokemonData={pokemonData}/>
+      </span>
     </div>
   );
 }
