@@ -11,6 +11,8 @@ const HEADERS = {
   "Access-Control-Allow-Headers": "Content-Type,Authorization",
 };
 
+const TYPES_URL = "https://pokeapi.co/api/v2/type/";
+
 function App() {
   const [pokemonData, setPokemonData] = useState();
 
@@ -25,7 +27,18 @@ function App() {
       console.log(data);
       setPokemonData(data);
     } catch {
-      alert("Pokemon doesnt exist!");
+      alert("Pokemon doesn't exist!");
+    }
+  }
+
+  async function getPokemonsOfType(type) {
+    try {
+      const { data } = await axios.get(`${TYPES_URL}${type}`);
+      console.log(data);
+      setPokemonData();
+      return data;
+    } catch {
+      alert(`Looking for ${type} didn't work`);
     }
   }
 
@@ -35,7 +48,14 @@ function App() {
       <Search
         searchPokemon={(pokemonIdOrName) => searchPokemon(pokemonIdOrName)}
       />
-      {pokemonData ? <PokeBox pokemonData={pokemonData} /> : ""}
+      {pokemonData ? (
+        <PokeBox
+          getPokemonsOfType={(type) => getPokemonsOfType(type)}
+          pokemonData={pokemonData}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 }
