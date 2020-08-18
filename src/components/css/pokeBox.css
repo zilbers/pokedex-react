@@ -3,15 +3,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border:  solid black;
     border-radius: 15%;
 }
 
 #infoBox {
     display: flex;
     flex-direction: column;
-    border:  solid black;
-    border-radius: 20%;
+    background: white;
+    border-radius: 15%;
     width: 90%;
     padding: 5%;
 }

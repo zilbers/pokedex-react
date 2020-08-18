@@ -1,27 +1,20 @@
 import React from "react";
+import InfoBox from "./InfoBox"; 
 import "./css/pokeBox.css";
+import "./css/types.css";
 
-function PokeBox(props) {
+export default function PokeBox(props) {
   const pokemonData = props.pokemonData;
   return (
-    <div id="pokeBox">
+    <div id="pokeBox" className={pokemonData.types[0].type.name}>
+      <span id="pokeName">
+        <span className="personalInfo">{pokemonData.name}</span>
+      </span>
       <img
         src={pokemonData.sprites.front_default}
         alt={`${pokemonData.name}_pic`}
       />
-      <div id="infoBox">
-        <span id="pokeName">
-          Name: <span className="personalInfo">{pokemonData.name}</span>
-        </span>
-        <span id="pokeHeight">
-          Height: <span className="personalInfo">{pokemonData.height}</span>
-        </span>
-        <span id="pokeWeight">
-          Weight: <span className="personalInfo">{pokemonData.weight}</span>
-        </span>
-      </div>
+      <InfoBox pokemonData={pokemonData}/>
     </div>
   );
 }
-
-export default PokeBox;
