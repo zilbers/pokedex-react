@@ -1,22 +1,41 @@
-import React from 'react';
-import './App.css';
+import React, { useState } from "react";
+import Header from "./components/Header";
+import Search from "./components/Search";
+import PokeBox from "./components/PokeBox";
+import axios from "axios";
+import "./App.css";
+
+const HEADERS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Credentials": true,
+  "Access-Control-Allow-Headers": "Content-Type,Authorization",
+};
 
 function App() {
+  const [pokemonData, setPokemonData] = useState();
+
+  async function searchPokemon(pokemonIdOrName = 25) {
+    try {
+      const { data } = await axios.get(
+        `https://pokeapi.co/api/v2/pokemon/${pokemonIdOrName}`,
+        {
+          headers: HEADERS,
+        }
+      );
+      console.log(data);
+      setPokemonData(data);
+    } catch {
+      alert("Pokemon doesnt exist!");
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Search
+        searchPokemon={(pokemonIdOrName) => searchPokemon(pokemonIdOrName)}
+      />
+      {pokemonData ? <PokeBox pokemonData={pokemonData} /> : ""}
     </div>
   );
 }
