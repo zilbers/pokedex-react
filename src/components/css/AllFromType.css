@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   height: 75vh;
-  width: 75vw;
+  width: 100%;
   border: 1px solid #ccc;
   font: 16px/26px Georgia, Garamond, Serif;
   overflow: auto;

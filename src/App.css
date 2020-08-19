@@ -19,3 +19,14 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.app {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 600px) {
+  .App {
+    width: 300px;
+  }
+}
