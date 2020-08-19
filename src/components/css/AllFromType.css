@@ -1,0 +1,10 @@
+#allFromType {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 75vh;
+  width: 75vw;
+  border: 1px solid #ccc;
+  font: 16px/26px Georgia, Garamond, Serif;
+  overflow: auto;
+}

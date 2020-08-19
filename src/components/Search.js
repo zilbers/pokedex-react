@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./css/search.css"
+import "./css/Search.css"
 
 export default function Search(props) {
   const [searchQuery, setSearchQuery] = useState(25);

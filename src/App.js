@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "./components/Header";
 import Search from "./components/Search";
 import PokeBox from "./components/PokeBox";
+import AllFromType from "./components/AllFromType";
 import axios from "axios";
 import "./App.css";
 
@@ -15,6 +16,7 @@ const TYPES_URL = "https://pokeapi.co/api/v2/type/";
 
 function App() {
   const [pokemonData, setPokemonData] = useState();
+  const [pokemonFromType, setPokemonFromType] = useState();
 
   async function searchPokemon(pokemonIdOrName = 25) {
     try {
@@ -25,6 +27,7 @@ function App() {
         }
       );
       console.log(data);
+      setPokemonFromType();
       setPokemonData(data);
     } catch {
       alert("Pokemon doesn't exist!");
@@ -36,6 +39,7 @@ function App() {
       const { data } = await axios.get(`${TYPES_URL}${type}`);
       console.log(data);
       setPokemonData();
+      setPokemonFromType(data);
       return data;
     } catch {
       alert(`Looking for ${type} didn't work`);
@@ -52,6 +56,14 @@ function App() {
         <PokeBox
           getPokemonsOfType={(type) => getPokemonsOfType(type)}
           pokemonData={pokemonData}
+        />
+      ) : (
+        ""
+      )}
+      {pokemonFromType ? (
+        <AllFromType
+          searchPokemon={(pokemonIdOrName) => searchPokemon(pokemonIdOrName)}
+          pokemonFromType={pokemonFromType}
         />
       ) : (
         ""

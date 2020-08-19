@@ -1,8 +1,8 @@
 import React from "react";
 import InfoBox from "./InfoBox";
 import Type from "./Type";
-import "./css/pokeBox.css";
-import "./css/types.css";
+import "./css/PokeBox.css";
+import "./css/Types.css";
 
 export default function PokeBox(props) {
   const pokemonData = props.pokemonData;

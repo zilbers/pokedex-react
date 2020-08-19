@@ -1,3 +1,9 @@
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
 html {
   background-image: linear-gradient(
     rgba(245, 241, 252, 0.5),
