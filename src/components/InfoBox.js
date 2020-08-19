@@ -6,10 +6,10 @@ export default function InfoBox(props) {
   return (
     <div id="infoBox">
       <span id="pokeHeight" className="infoContainer">
-        Height: <span className="personalInfo">{pokemonData.height}</span>
+        Height: <span className="personalInfo">{pokemonData.height}"</span>
       </span>
       <span id="pokeWeight" className="infoContainer">
-        Weight: <span className="personalInfo">{pokemonData.weight}</span>
+        Weight: <span className="personalInfo">{pokemonData.weight}lbs</span>
       </span>
       <span id="abilitiesContainer">
         Abilities: <Abilities pokemonData={pokemonData}/>

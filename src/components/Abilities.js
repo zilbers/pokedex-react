@@ -7,7 +7,7 @@ export default function Abilities(props) {
       {pokemonData.abilities.map((element) => {
         return (
           <span key={element.ability.name} className="abilityItem">
-            {element.ability.name}
+            {element.ability.name.charAt(0).toUpperCase() + element.ability.name.slice(1)}
           </span>
         );
       })}
