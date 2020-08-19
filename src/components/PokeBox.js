@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import InfoBox from "./InfoBox";
 import Type from "./Type";
 import "./css/PokeBox.css";
@@ -7,6 +7,10 @@ import "./css/Types.css";
 export default function PokeBox(props) {
   const pokemonData = props.pokemonData;
   const [imgSrc, setImgSrc] = useState(pokemonData.sprites.front_default);
+
+  useEffect(() => {
+    setImgSrc(pokemonData.sprites.front_default);
+  }, [pokemonData]);
 
   return (
     <div className="pokeball">
@@ -19,7 +23,7 @@ export default function PokeBox(props) {
           getPokemonsOfType={(type) => props.getPokemonsOfType(type)}
         />
         <img
-          src={imgSrc ? imgSrc : "./css/no-image.jpg"}
+          src={imgSrc}
           id="pokePic"
           alt={`${pokemonData.name}_pic`}
           onMouseEnter={() => {
