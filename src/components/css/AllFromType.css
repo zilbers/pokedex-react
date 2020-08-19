@@ -8,3 +8,25 @@
   font: 16px/26px Georgia, Garamond, Serif;
   overflow: auto;
 }
+
+#typesHeader {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5em;
+  border-radius: 30%;
+}
+
+.pokeTypeList {
+  display: flex;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.651);
+  width: 80%;
+  padding: 0.5em;
+  border-radius: 20%;
+  margin: 5px;
+}
+
+.pokeTypeList:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
